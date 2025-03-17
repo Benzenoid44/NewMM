@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>INR Donation Portal</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      padding: 40px;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      width: 250px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .summary {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Donate to NGO (INR)</h1>
+  <input type="text" id="donorName" placeholder="Your Name"><br>
+  <input type="number" id="amount" placeholder="Amount in INR"><br>
+  <button onclick="proceedTransaction()">Proceed Transaction</button>
+
+  <div class="summary" id="summaryBox" style="display: none;">
+    <h3>Donation Summary</h3>
+    <p><strong>Name:</strong> <span id="sName"></span></p>
+    <p><strong>Amount:</strong> ₹<span id="sAmount"></span></p>
+    <p><strong>Wallet:</strong> <span id="sWallet"></span></p>
+    <p><strong>Status:</strong> ✅ Transaction Successful</p>
+    <button onclick="downloadPDF()">📄 Download Summary PDF</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
